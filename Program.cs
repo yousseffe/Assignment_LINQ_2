@@ -174,6 +174,158 @@ namespace Assignment_LINQ_2
             #endregion
 
             #endregion
+
+            #region Set Operators
+
+            #region Q1
+            //var uniqueCategory = ProductsList.Select(p => p.Category).Distinct();
+            //foreach (var category in uniqueCategory)
+            //{
+            //    Console.WriteLine(category);
+            //}
+            #endregion
+
+            #region Q2
+            //var uniqueProductFirstLetters = ProductsList.Select(p => p.ProductName[0]).Distinct();
+            //var uniqueCustomerFirstLetters = CustomersList.Select(c => c.CustomerName[0]).Distinct();
+            //var uniqueFirstLetters = uniqueProductFirstLetters.Concat(uniqueCustomerFirstLetters).Distinct();
+            //foreach (var product in uniqueProductFirstLetters)
+            //{
+            //    Console.WriteLine(product);
+            //}
+            #endregion
+
+            #region Q3
+            //var uniqueProductFirstLetters = ProductsList.Select(p => p.ProductName[0]).Distinct();
+            //var uniqueCustomerFirstLetters = CustomersList.Select(c => c.CustomerName[0]).Distinct();
+
+            //var commonFirstLetters = uniqueProductFirstLetters.Intersect(uniqueCustomerFirstLetters);
+            //foreach (var product in commonFirstLetters)
+            //{
+            //    Console.WriteLine(product);
+            //}
+            #endregion
+
+            #region Q4
+            //var uniqueProductFirstLetters = ProductsList.Select(p => p.ProductName[0]).Distinct();
+            //var uniqueCustomerFirstLetters = CustomersList.Select(c => c.CustomerName[0]).Distinct();
+
+            //var uniqueLetters = uniqueProductFirstLetters.Except(uniqueCustomerFirstLetters);
+            //foreach (var product in uniqueLetters)
+            //{
+            //    Console.WriteLine(product);
+            //}
+            #endregion
+
+            #region Q5
+
+            //// لو فى طريقه تانيه ابعتها ميل عشان ال 
+            //// where 
+            //// هتخلينى اخد لما يكونوا اكبر من 3 بس 
+            //var customerLastThreeChars = CustomersList.Select(c => c.CustomerName.Length >= 3
+            //                                                  ? c.CustomerName.Substring(c.CustomerName.Length - 3)
+            //                                                  : c.CustomerName);
+            //var productLastThreeChars = ProductsList.Select(p => p.ProductName.Length >= 3
+            //                                                ? p.ProductName.Substring(p.ProductName.Length - 3)
+            //                                                : p.ProductName);
+
+            //var lastThreeChars = customerLastThreeChars.Concat(productLastThreeChars);
+            //foreach(var letters in lastThreeChars)
+            //{
+            //    Console.WriteLine(letters);
+            //}
+            #endregion
+            #endregion
+
+            #region Partitioning Operators
+
+            #region Q1
+            //var first3OrdersInWashington = CustomersList.Where(c => c.Address == "Washington")
+            //                                            .SelectMany(c => c.Orders)
+            //                                            .Take(3);
+            //foreach( var order in first3OrdersInWashington)
+            //{
+            //    Console.WriteLine(order);
+            //}
+            #endregion
+
+            #region Q2
+            //var allExceptFirst2OrdersInWashington = CustomersList.Where(c => c.Address == "Washington")
+            //                                                  .SelectMany(c => c.Orders)
+            //                                                  .Skip(2);
+            //foreach (var order in allExceptFirst2OrdersInWashington)
+            //{
+            //    Console.WriteLine(order);
+            //}
+            #endregion
+
+            #region Q3
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //var result = numbers.TakeWhile((n, index) => n >= index);
+            //foreach (int n in result)
+            //{
+            //    Console.WriteLine(n);
+            //}
+            #endregion
+
+            #region Q4
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = numbers.SkipWhile(x => x %3 != 0);
+            //foreach (int x in result)
+            //{
+            //    Console.WriteLine(x);
+            //}
+
+            #endregion
+
+            #region Q5
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //var result = numbers.SkipWhile((x,index) => x >= index);
+
+            //foreach (var i in result)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            #endregion
+
+            #endregion
+
+            #region Quantifiers
+
+            #region Q1
+            //var words = File.ReadAllLines("dictionary_english.txt");
+
+            //bool containsEi = words.Any(word => word.Contains("ei"));
+
+            //Console.WriteLine(containsEi);
+
+            #endregion
+
+            #region Q2
+            //var categoriesWithOutOfStock = ProductsList.GroupBy(p => p.Category)
+            //                                           .Where(g => g.Any(p => p.UnitsInStock == 0));
+            //foreach (var category in categoriesWithOutOfStock)
+            //{
+            //    Console.WriteLine(category);
+            //}
+
+            #endregion
+
+            #region Q3
+            //var categoriesWithAllInStock = ProductsList.GroupBy(p => p.Category)
+            //                                           .Where(g => g.All(p => p.UnitsInStock != 0));
+            
+            //foreach (var category in categoriesWithAllInStock)
+            //{
+            //    Console.WriteLine(category);
+            //}
+            #endregion
+
+            #endregion
+
+
         }
     }
 }
