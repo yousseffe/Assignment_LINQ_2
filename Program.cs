@@ -1,8 +1,14 @@
-﻿using static ListGeneratorNameSpace.ListGenerator;
+﻿using System.Collections.Generic;
+using static ListGeneratorNameSpace.ListGenerator;
 namespace Assignment_LINQ_2
 {
     internal class Program
     {
+        static string GetSortedString(string str)
+        {
+            char[] chars = str.Where(c => !char.IsWhiteSpace(c)).OrderBy(c => c).ToArray() ;
+            return new string(chars) ;
+        }
         static void Main(string[] args)
         {
             #region Element Operators
@@ -316,7 +322,7 @@ namespace Assignment_LINQ_2
             #region Q3
             //var categoriesWithAllInStock = ProductsList.GroupBy(p => p.Category)
             //                                           .Where(g => g.All(p => p.UnitsInStock != 0));
-            
+
             //foreach (var category in categoriesWithAllInStock)
             //{
             //    Console.WriteLine(category);
@@ -325,7 +331,63 @@ namespace Assignment_LINQ_2
 
             #endregion
 
+            #region Grouping Operators
 
+            #region Q1
+            //List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+
+            //var groupedByRemainder = numbers.GroupBy(x => x % 5)
+            //                                .Select(g => new
+            //                                {
+            //                                    Reminder = g.Key,
+            //                                    numbers = g
+            //                                });
+            //foreach(var group in groupedByRemainder)
+            //{
+            //    Console.WriteLine($"Numbers with a remainder of {group.Reminder} when divided by 5 :");
+            //    foreach(var item in group.numbers) Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Q2
+            //var words = File.ReadAllLines("dictionary_english.txt");
+
+            //var groupedByFirstLetter = words.GroupBy(w => char.ToLower(w[0]))
+            //                                .Select(g => new
+            //                                {
+            //                                    firstLetter = g.Key,
+            //                                    words = g
+            //                                });
+
+            //foreach (var word in groupedByFirstLetter)
+            //{
+            //    Console.WriteLine();
+            //    Console.WriteLine($"Words that start with {word.firstLetter}");
+            //    foreach(var w in word.words) Console.WriteLine(w);
+            //}
+            #endregion
+
+            #region Q3
+
+
+            //String[] Arr = { "from", "salt", "earn", " last", "near", "form" };
+            //var groupedByAnagram = Arr.GroupBy(w => GetSortedString(w))
+            //                          .Select(g => new
+            //                          {
+            //                              anagram = g.Key,
+            //                              words = g
+            //                          });
+            //foreach (var g in groupedByAnagram)
+            //{
+            //    Console.WriteLine($"the words that folow this anagram {g.anagram}");
+            //    foreach (var w in g.words)
+            //    {
+            //        Console.WriteLine(w);
+            //    }
+            //}
+            #endregion
+
+            #endregion
         }
     }
 }
